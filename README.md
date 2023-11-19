@@ -1,3 +1,3 @@
-# Trabalho 1 sobre algoritmos gulosos
+# Trabalho 1 Sobre Algoritmos Gulosos
 
 #### Algoritmo escolhido pelo grupo: Sherlock and The Beast 
