@@ -15,22 +15,24 @@ class Result {
 
     public static void decentNumber(int n) {
         StringBuilder decentNumber = new StringBuilder();
-        //Verifica o maximo de numeros 5
-        int number = n;
-        // Verifica se é divisivel por 3, caso não seja irá ser decrementado
-        while (number % 3 != 0) {
-            number -= 5;
+        // Verifica o número máximo de 5 que pode estar no decentNumber
+        int numberFives = n;
+
+        // Verifica se o number é divisível por 3, se não for, decrementa por 5
+        // Visando garantir que o número de dígitos "5" no decentNumber seja o máximo possível
+        while (numberFives % 3 != 0) {
+            numberFives -= 5;
         }
-        //Verifica se existe a possibilidade de um decentNumber, senão insere a quantidade de 5 e 3 para formar o decentNumber
-        if (number < 0) {
+        // Verifica se existe a possibilidade de um decentNumber
+        if (numberFives < 0) {
+            // Se o numero for negativo, significa que não é possível formar um decentNumber
             decentNumber.append("-1");
         } else {
-            decentNumber.append("5".repeat(number));
-            decentNumber.append("3".repeat(n - number));
+            decentNumber.append("5".repeat(numberFives));
+            decentNumber.append("3".repeat(n - numberFives));
         }
         System.out.println(decentNumber);
     }
-
 }
 
 public class Solution {
@@ -50,7 +52,7 @@ public class Solution {
         });
         long finishTime = System.nanoTime() - startTime;
         System.out.println("Tempo de execução total em millis: "
-                + finishTime/1000000);
+                + finishTime / 1000000);
 
         bufferedReader.close();
     }
